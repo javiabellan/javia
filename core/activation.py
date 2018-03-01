@@ -23,7 +23,8 @@ def d_tanh(x):
 
 ################################################### Rectified Linear Unit
 def relu(x):
-	return max(0, x)
+	#return max(0, x)
+	return np.maximum(h, 0)
 
 def d_relu(x):
 	return 1 if x > 0 else 0

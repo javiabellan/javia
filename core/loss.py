@@ -27,6 +27,9 @@ Con regularización
 
 
 
+# Cost function is the mean of the loss functions
+def cost(pred, y):
+	return np.sum(loss(pred, y)) / y.size
 
 
 ################################################### Absolute error (L1)
@@ -74,7 +77,10 @@ def binaryCrossEntropy(pred, y):
 
 ################################################### Maximum Likelihood
 def maximumLikelihood(pred, y):
-    pass
+	if y == 1:
+		return log(pred)
+	else:
+		return log(1 - pred)
 
 ################################################### Hinge
 def Hinge(pred, y):
